@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Custom theme colors */
+:root {
+  --midnight: #0b0c2a;
+  --navy: #14163a;
+  --neon: #c77dff;
+  --neon2: #9d4edd;
+}
+
+/* Background cannot use @apply with CSS vars in Tailwind v4 */
+body {
+  background: linear-gradient(to bottom, var(--midnight), var(--navy));
+  color: #e5e5e5;
+  font-family: Inter, sans-serif;
+  min-height: 100vh;
+}
+
+/* Glass effect still works because these are native CSS properties */
+.glass {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
