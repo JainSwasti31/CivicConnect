@@ -29,7 +29,7 @@ export default function Register() {
   };
 
   return (
-    <section className="max-w-md mx-auto p-8 glass mt-10 rounded-xl">
+    <section className="max-w-md mx-auto p-8 glass mt-24 rounded-xl">
       <h2 className="text-2xl text-neon mb-4">Create Account</h2>
 
       <form className="space-y-4" onSubmit={handleSubmit}>

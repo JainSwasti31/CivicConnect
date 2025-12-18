@@ -8,32 +8,53 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = await login(e.target.email.value, e.target.password.value);
-    nav(user.role === "municipal" ? "/admin" : "/report");
+
+    try {
+      const user = await login(
+        e.target.email.value,
+        e.target.password.value
+      );
+
+      nav(user.role === "municipal" ? "/admin" : "/report");
+    } catch (error) {
+      console.error(error.response?.data || error.message);
+      alert(error.response?.data?.message || "Login failed");
+    }
   };
 
   return (
-    <section className="max-w-md mx-auto p-8 glass mt-10 rounded-xl">
-      <h2 className="text-2xl text-[--neon] mb-4">Login</h2>
-
-      <form className="space-y-4" onSubmit={handleSubmit}>
-        <input
-          name="email"
-          className="w-full p-3 bg-white/10 rounded"
-          placeholder="Email"
-          required
-        />
-        <input
-          name="password"
-          type="password"
-          className="w-full p-3 bg-white/10 rounded"
-          placeholder="Password"
-          required
-        />
-        <button className="w-full bg-[--neon] text-[#0b0c2a] py-3 rounded-lg font-semibold">
+    // 🔑 FULL PAGE CENTERING (NAVBAR SAFE)
+    <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4">
+      <div className="max-w-md w-full p-8 glass rounded-xl border border-white/20">
+        <h2 className="text-2xl font-semibold text-white mb-6 text-center">
           Login
-        </button>
-      </form>
+        </h2>
+
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <input
+            name="email"
+            type="email"
+            className="w-full p-3 bg-white text-black rounded placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[--neon]"
+            placeholder="Email"
+            required
+          />
+
+          <input
+            name="password"
+            type="password"
+            className="w-full p-3 bg-white text-black rounded placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[--neon]"
+            placeholder="Password"
+            required
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition"
+          >
+            Login
+          </button>
+        </form>
+      </div>
     </section>
   );
 }

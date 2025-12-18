@@ -44,3 +44,21 @@ export const updateStatus = async (req, res) => {
   const updated = await Issue.findByIdAndUpdate(id, { status }, { new: true });
   res.json({ issue: updated });
 };
+
+export const getLiveLocations = async (req, res) => {
+  try {
+    const issues = await Issue.find(
+      {},
+      {
+        title: 1,
+        status: 1,
+        category: 1,
+        location: 1,
+      }
+    );
+
+    res.status(200).json({ issues });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
