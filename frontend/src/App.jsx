@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import MapPage from "./pages/MapPage";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 import MunicipalMap from "./pages/MunicipalMap.jsx";
+import MyIssues from "./pages/MyIssues.jsx";
 
 function Layout() {
   const location = useLocation();
@@ -29,6 +30,7 @@ function Layout() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/municipal-map" element={<MunicipalMap />} />
+          <Route path="/my-issues" element={<MyIssues />} />
         </Routes>
       </div>
 
