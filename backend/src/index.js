@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 // Middlewares
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ origin: "https://civic-connect-amber-two.vercel.app/", credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
