@@ -101,7 +101,7 @@ export default function Report() {
 
       {/* Success Popup */}
       {popup && (
-        <div className="fixed top-20 right-6 z-[9999]
+        <div className="fixed top-20 right-6 z-9999
                 bg-emerald-600 text-white px-6 py-3
                 rounded-lg shadow-xl">
           ✅ Issue submitted successfully

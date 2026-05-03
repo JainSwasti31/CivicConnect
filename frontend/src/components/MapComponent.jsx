@@ -11,7 +11,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 });
 
-/* 🔹 AUTO-FOCUS MAP ON MARKERS */
+/*  AUTO-FOCUS MAP ON MARKERS */
 function FocusOnIssues({ issues, tempMarker }) {
   const map = useMap();
 

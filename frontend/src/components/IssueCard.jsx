@@ -36,7 +36,7 @@ export default function IssueCard({ issue, actions }) {
         />
       )}
 
-      {/* 🗺 MINI MAP (LIVE LOCATION) */}
+      {/* MINI MAP (LIVE LOCATION) */}
       {issue.location?.lat && issue.location?.lng && (
         <div className="h-40 rounded-lg overflow-hidden border border-white/20">
           <MapComponent issues={[issue]} />
